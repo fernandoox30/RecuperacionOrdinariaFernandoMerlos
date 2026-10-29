@@ -1,13 +1,16 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const API_URL = 'https://rickandmortyapi.com/api/character';
+const API_URL = 'https://api.tvmaze.com/shows';
 
 // Convierte la respuesta cruda de la API en los datos que necesita la tarjeta.
 const mapCharacter = (c) => ({
   id: c.id,
-  title: c.name,
-  image: c.image,
-  description: `${c.status} • ${c.species} • ${c.gender} — Origen: ${c.origin?.name ?? 'Desconocido'}`
+  Nombre: c.name,
+  Image: c.image,
+  Genero: c.genres,
+  FechaDeInicio: c.premiered,
+  FechaDeFinalizacion: c.ended,
+  ResumenDelShow: c.summary,
 });
 
 export function useCharacters() {
