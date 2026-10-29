@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Pressable, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import InfoRow from '../components/InfoRow';
@@ -23,6 +23,11 @@ export default function StudentScreen({ navigation }) {
         <Text style={styles.title}>RecuperacionOrdinariaMerlos</Text>
         <Text style={styles.subtitle}>React Native + Expo</Text>
       </View>
+
+      <View style={styles.card}>
+      {image ? <Image source={{ uri: "https: //core.ricaldone.edu.sv/logo.png " }} style={styles.image} /> : null}
+    </View>
+      
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Información del estudiante</Text>
@@ -109,5 +114,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
     marginTop: 22
-  }
+  },
+  image: { width: '100%', height: 260, resizeMode: 'cover', backgroundColor: '#24242D' },
 });
