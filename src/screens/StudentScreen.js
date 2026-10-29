@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
 import InfoRow from '../components/InfoRow';
 
 export default function StudentScreen({ navigation }) {
@@ -21,12 +20,8 @@ export default function StudentScreen({ navigation }) {
           <Ionicons name="person" size={42} color="#FFFFFF" />
         </View>
         <Text style={styles.title}>RecuperacionOrdinariaMerlos</Text>
-        <Text style={styles.subtitle}>React Native + Expo</Text>
       </View>
 
-      <View style={styles.card}>
-      {image ? <Image source={{ uri: "https: //core.ricaldone.edu.sv/logo.png " }} style={styles.image} /> : null}
-    </View>
       
 
       <View style={styles.card}>
@@ -40,7 +35,7 @@ export default function StudentScreen({ navigation }) {
 
       <Pressable
         style={({ pressed }) => [styles.button, pressed && styles.pressed]}
-        onPress={() => navigation.navigate('API')}
+        onPress={() => navigation.navigate('Api')}
       >
         <Text style={styles.buttonText}>Ir a Pantalla 2</Text>
         <Ionicons name="arrow-forward" size={21} color="#FFFFFF" />
@@ -114,6 +109,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
     marginTop: 22
-  },
-  image: { width: '100%', height: 260, resizeMode: 'cover', backgroundColor: '#24242D' },
+  }
 });

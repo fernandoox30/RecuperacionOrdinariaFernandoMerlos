@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable, ActivityIndicator, RefreshControl } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
 import { useCharacters } from '../hooks/useCharacters';
 import ApiCard from '../components/ApiCard';
 
@@ -18,7 +17,7 @@ export default function ApiScreen() {
           <Ionicons name="globe-outline" size={28} color="#FFFFFF" />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={styles.title}>Rick and Morty</Text>
+          <Text style={styles.title}>tv shows</Text>
           <Text style={styles.subtitle}>Datos obtenidos desde una API externa</Text>
         </View>
       </View>
@@ -44,10 +43,6 @@ export default function ApiScreen() {
           </Pressable>
         </View>
       ) : null}
-
-      {characters.map((c) => (
-        <ApiCard key={c.id} title={c.title} image={c.image} description={c.description} />
-      ))}
 
       <View style={styles.pagination}>
         <Pressable disabled={page <= 1 || loading} onPress={prevPage} style={[styles.pageButton, page <= 1 && styles.disabled]}>
